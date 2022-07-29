@@ -1,0 +1,24 @@
+import csv
+import pyttsx3
+engine = pyttsx3.init()
+
+engine.say('Ingrese su nombre')
+engine.runAndWait()
+nombre=input()
+
+engine.say('Ingrese sus apellidos')
+engine.runAndWait()
+apellidos=input()
+
+engine.say('Ingrese su edad')
+engine.runAndWait()
+edad=input()
+
+engine.say('Ingrese su DNI')
+engine.runAndWait()
+DNI=input()
+
+
+with open ("Datos.csv","a") as file:
+    writer=csv.writer(file, delimiter=',')
+    writer.writerow([nombre,apellidos, edad, DNI])
